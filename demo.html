@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sản phẩm trị nám da</title>
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+
+    <nav class="navbar navbar-fixed-top navbar-light bg-white">
+        <div class="container">
+            <a href="/index.html" class="ui-variable-logo navbar-brand" title="iShopGo">
+                <img src="img/Logo web-desk 1.png" />
+            </a>
+            <div class="ui-navigation navbar-right">
+                <ul class="nav navbar-nav">
+                    <li><a href="/ebook.html">EBOOK</a></li>
+                    <li>
+                        <form action="/action_page.php">
+                            <input type="text" id="fname" name="fname" value="SEARCH"><br>
+                        </form>
+                    </li>
+                    <li><a href="/gioi-thieu.html">GIỚI THIỆU</a></li>
+                    <li><a href="/dich-vu.html">DỊCH VỤ</a></li>
+                    <li><a href="/du-an.html">DỰ ÁN</a></li>
+                    <li><a href="/block.html">BLOCK</a></li>
+                    <li><a href="/lien-he.html">LIÊN HỆ</a></li>
+                </ul>
+            </div>
+            <a href="#" class="ui-mobile-nav-toggle pull-right"></a>
+
+        </div>
+    </nav>
+    <!-- Main Wrapper -->
+    <div class="main main--ishopgo" role="main">
+        <div class="container section">
+            <div class="row">
+                <!-- Phần tử sticker -->
+                <div id="sticker" class="col-md-6 sticker col-6">
+                    <img src="img/highcommerce diagram (XANH) 2 3.png" alt="Image 1">
+                    <img src="img/Highcommerce_bydplusvn (5) 1.png" alt="Image 2">
+                    <img src="img/Highcommerce_bydplusvn (2) 1.png" alt="Image 3">
+                    <img src="img/Highcommerce_bydplusvn (3) 1.png" alt="Image 3">
+
+                </div>
+
+                <!-- Nội dung chính -->
+                <div class="content col-md-6 col-6">
+                    <h1>Nội dung chính</h1>
+                    <p>Thêm nhiều đoạn văn để tạo hiệu ứng cuộn...</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris...</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris...</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris...</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris...</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.sliderpro.min.js"></script>
+    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/applify.js"></script>
+
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <script>
+        // Lấy phần tử sticker
+        const sticker = document.getElementById("sticker");
+
+        // Vị trí gốc của phần tử sticker
+        const stickerTop = sticker.offsetTop;
+
+        // Lắng nghe sự kiện cuộn
+        window.onscroll = function () {
+            // Kiểm tra vị trí cuộn hiện tại
+            if (window.pageYOffset > stickerTop) {
+                sticker.classList.add("fixed");
+            } else {
+                sticker.classList.remove("fixed");
+            }
+        };
+    </script>
+
+
+</body>
+
+</html>
