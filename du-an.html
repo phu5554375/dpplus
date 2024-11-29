@@ -8,6 +8,44 @@
 	<title>introl</title>
 	<link rel="stylesheet" href="css/main.css" />
 </head>
+<style>
+	.menu {
+		display: flex;
+		justify-content: space-around;
+		padding: 40px 0;
+	}
+
+	.menu-item {
+		position: relative;
+		padding-right: 90px;
+
+	}
+
+	.menu-btn {
+		background: none;
+		border: none;
+		font-size: 16px;
+		cursor: pointer;
+	}
+
+	.menu-btn:hover {
+		background-color: #d3d3d3;
+	}
+
+	.dropdown {
+		display: none;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		padding: 10px;
+		z-index: 10;
+		width: max-content;
+	}
+
+	.dropdown p {
+		margin: 5px 0;
+	}
+</style>
 
 <body>
 	<nav class="navbar navbar-fixed-top navbar-light bg-white">
@@ -250,19 +288,38 @@
 				</div>
 			</div>
 		</div>
-
-
 		<!-- Footer -->
 		<footer class="ui-footer subscribe-footer ui-waves">
 			<div class="footer-bg">
 				<div class="container">
 					<div class="title-footer">
-						<h4>EMAIL</h4>
-						<h4>TUYỂN DỤNG</h4>
-						<h4>ĐỊA CHỈ</h4>
-						<h4>EMAIL</h4>
-					</div>
+						<div class="menu">
+							<div class="menu-item">
+								<button class="menu-btn">EMAIL <i class="fa fa-plus"></i></button>
+								<div class="dropdown">
+									<p>info@dplusvn.com</p>
+								</div>
+							</div>
+							<div class="menu-item">
+								<button class="menu-btn">ĐỊA CHỈ</button>
+								<div class="dropdown">
+									<p><b>Hà Nội:</b> Sảnh B, tòa AZ Sky,</br> khu đô thị Định Công, Hoàng Mai.</p>
+									<p><b>HCM:</b> 497/24/9g Phan Văn Trị,</br> Phường 5, Gò Vấp.</p>
+								</div>
+							</div>
+							<div class="menu-item">
+								<button class="menu-btn">ĐIỀU KHOẢN</button>
+								<div class="dropdown">
+									<p><a href="#">Điều khoản sử dụng</a></p>
+									<p><a href="#">Điều khoản sử dụng</a></p>
+								</div>
+							</div>
+							<div class="menu-item">
+								<button class="menu-btn">TUYỂN DỤNG</button>
 
+							</div>
+						</div>
+					</div>
 
 				</div><!-- .container -->
 			</div><!-- .footer-bg -->
@@ -273,15 +330,19 @@
 					<div class="row align-items-center">
 						<!-- Copyright -->
 						<div class="col-8">
-							<p> © 2021 d+ studio | ĐKKD số: 0106850575 - Sở kế hoạch và đầu tư thành phố Hà Nội cấp ngày
+							<p> © 2024 d+ studio | ĐKKD số: 0106850575 - Sở kế hoạch và đầu tư thành phố Hà Nội cấp ngày
 								18/05/2015</p>
 						</div>
 						<!-- Social Icons -->
 						<div class="col-4 text-right">
-							<a href="#" class="btn btn-circle shadow-md"><img src="img/Instagram.png" /></a>
-							<a href="#" class="btn btn-circle shadow-md"><img src="img/Facebook.png" /></a>
-							<a href="#" class="btn btn-circle shadow-md"><img src="img/Linkedin.png" /></a>
-							<a href="#" class="btn btn-circle shadow-md"><img src="img/Youtube.png" /></a>
+							<a href="https://www.instagram.com/dplusvn/" class="btn btn-circle shadow-md"><img
+									src="img/Instagram.png" /></a>
+							<a href="https://www.facebook.com/dplusvietnam/" class="btn btn-circle shadow-md"><img
+									src="img/Facebook.png" /></a>
+							<a href="https://www.linkedin.com/company/dplusvietnam"
+								class="btn btn-circle shadow-md"><img src="img/Linkedin.png" /></a>
+							<a href="https://www.youtube.com/channel/UCy6BLVSJk4Xfc7b7FEiGBBg?gidzl=75ej1YGNKYuPGIm0B05QAH1190KpNrbyM1yk1cO617aDIou7ELPGA51DBm4vL58i14X-Kc8DU4yR819JB0"
+								class="btn btn-circle shadow-md"><img src="img/Youtube.png" /></a>
 						</div>
 					</div>
 				</div>
@@ -312,9 +373,31 @@
 			evt.currentTarget.className += " active";
 		}
 	</script>
-
-
-
+	<script>
+		const menuButtons = document.querySelectorAll('.menu-btn');
+		menuButtons.forEach((button) => {
+			button.addEventListener('click', () => {
+				document.querySelectorAll('.dropdown').forEach(dropdown => {
+					if (dropdown !== button.nextElementSibling) {
+						dropdown.style.display = 'none';
+					}
+				});
+				const dropdown = button.nextElementSibling;
+				if (dropdown.style.display === 'block') {
+					dropdown.style.display = 'none';
+				} else {
+					dropdown.style.display = 'block';
+				}
+			});
+		});
+		document.addEventListener('click', (event) => {
+			if (!event.target.closest('.menu-item')) {
+				document.querySelectorAll('.dropdown').forEach(dropdown => {
+					dropdown.style.display = 'none';
+				});
+			}
+		});
+	</script>
 </body>
 
 </html>
